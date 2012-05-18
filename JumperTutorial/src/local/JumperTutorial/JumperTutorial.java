@@ -13,6 +13,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 
+//made by flash tutor http://www.tonypa.pri.ee/tbw/start.html
+
 public class JumperTutorial implements ApplicationListener {
 	Array<Texture> images;
 	Hero hero;
@@ -85,16 +87,16 @@ public class JumperTutorial implements ApplicationListener {
 
 		int speed = 100;
 		if (Gdx.input.isKeyPressed(Keys.LEFT)) {
-			hero.setX(hero.getX() - speed * Gdx.graphics.getDeltaTime());
+			hero.moveChar(Gdx.graphics.getDeltaTime(), -1, 0);
 		}
-		if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
-			hero.setX(hero.getX() + speed * Gdx.graphics.getDeltaTime());
+		else if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
+			hero.moveChar(Gdx.graphics.getDeltaTime(), 1, 0);
 		}
-		if (Gdx.input.isKeyPressed(Keys.UP)) {
-			hero.setY(hero.getY() - speed * Gdx.graphics.getDeltaTime());
+		else if (Gdx.input.isKeyPressed(Keys.UP)) {
+			hero.moveChar(Gdx.graphics.getDeltaTime(), 0, -1);
 		}
-		if (Gdx.input.isKeyPressed(Keys.DOWN)) {
-			hero.setY(hero.getY() + speed * Gdx.graphics.getDeltaTime());
+		else if (Gdx.input.isKeyPressed(Keys.DOWN)) {
+			hero.moveChar(Gdx.graphics.getDeltaTime(), 0, 1);
 		}
 	}
 
